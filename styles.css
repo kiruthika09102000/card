@@ -1,0 +1,313 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Trending Profile Card with Animation */
+.profile-card {
+    background: #f8f9fa; /* Light greyish-white for a subtle contrast */
+    width: 340px; /* Optimized width */
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px; /* Modern rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    max-height: 500px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    animation: fadeIn 1s ease-in-out, pulseEffect 2.5s infinite;
+}
+
+/* Hover Effect - 3D Tilt & White Background */
+.profile-card:hover {
+    transform: rotateX(5deg) rotateY(5deg) scale(1.05);
+    background: #ffffff; /* Pure white on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Soft fade-in effect on page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Pulse Effect for a Subtle Glow */
+@keyframes pulseEffect {
+    0% {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    50% {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+}
+
+
+.profile-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #667eea;
+}
+/* Stylish H2 */
+h2 {
+    margin: 10px 0;
+   color: #2c3e50; /* Dark Blue */
+    font-size: 24px; /* Slightly larger */
+    font-weight: 700; /* Bolder look */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    letter-spacing: 1.5px; /* Spaced out for modern aesthetics */
+    font-family: 'Playfair Display', serif; /* Elegant and stylish font */
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    background: none; /* Remove gradient */
+    -webkit-text-fill-color: #2c3e50; /* Apply dark grey color */
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out, -webkit-text-fill-color 0.3s ease-in-out;
+}
+
+/* Grey Hover Effect */
+h2:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.5); /* Grey glow effect */
+    -webkit-text-fill-color: pink; /* Change text to grey */
+}
+
+/* Fancy Underline */
+h2::after {
+    content: "";
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, grey, #b3b3b3); /* Grey gradient */
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Expand underline on hover */
+h2:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.designation {
+    font-size: 19px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    color: #2c3e50;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0; /* Start with no width */
+    animation: typing 3s steps(20, end) forwards;
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap');
+/* Container Styling */
+.text-container {
+  background: rgba(255, 255, 255, 0.2); /* Glass effect */
+  backdrop-filter: blur(10px); /* Blurred background */
+  padding: 20px 30px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  max-width: 600px;
+  text-align: left; /* Align text to the left */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeInUp 1s ease-out, pulseGlow 3s infinite alternate;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Add a spiral binding effect */
+.text-container::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 10px;
+  width: 10px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    transparent 0px,
+    transparent 8px,
+    #444 8px,
+    #444 12px
+  );
+  border-radius: 5px;
+}
+
+/* Dotted margin to simulate perforation */
+.text-container::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  height: 90%;
+  width: 3px;
+  background: repeating-linear-gradient(
+    white 0px,
+    white 5px,
+    black 5px,
+    black 8px
+  );
+}
+
+/* Tilt and lift effect on hover */
+.text-container:hover {
+  transform: rotateX(5deg) rotateY(5deg) translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Bio Text Styling with Rainbow Effect */
+.bio {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00, #48ff00, #00f7ff, #000dff, #7a00ff, #ff00f7);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowText 3s linear infinite;
+  line-height: 1.6;
+  letter-spacing: 0.8px;
+  margin: 0;
+  position: relative;
+}
+
+/* Rainbow Animation */
+@keyframes rainbowText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+}
+
+/* Subtle glowing effect */
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  to {
+    box-shadow: 0 6px 18px rgba(52, 152, 219, 0.4);
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* Social Links Styling */
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Social Icon Styling */
+.social-icon {
+    text-decoration: none;
+    icon-size: 30px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+/* Individual Icon Colors */
+.social-icon.linkedin {
+    color: #0077b5; /* LinkedIn Blue */
+    font-size: 40px;
+}
+
+.social-icon.email {
+    color: #D44638; /* GitHub Dark Gray */
+    font-size: 40px;
+}
+
+.social-icon.github {
+    color: #333333; /* Gmail Red */
+    font-size: 40px;
+}
+.social-icon.portfolio {
+    color: #333333;  /* Set the color, you can change this to any color you prefer */
+    font-size: 40px;  /* Adjust the font size to match */
+}
+/* Glow, Scale, and Rotate Effect on Hover */
+.social-icon:hover {
+    transform: scale(1.2) rotate(5deg); /* Slight rotation and scale up */
+    color: #007bff; /* Change to blue */
+    text-shadow: 0px 0px 10px rgba(0, 123, 255, 0.6); /* Light glow effect */
+}
+
+
+
+/* Responsive */
+@media (max-width: 400px) {
+    .profile-card {
+        width: 90%;
+        padding: 15px;
+    }
+}
